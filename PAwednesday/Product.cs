@@ -1,11 +1,20 @@
 namespace PAwednesday;
 
+using System;
+using System.Collections.Generic;
+
+public enum FoodType
+{
+    Liquid,
+    Solid
+}
+
 public abstract class Product
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
+    private int Id { get; set; }
+    private string Name { get; set; }
 
-    public Product(int id, string name)
+    protected Product(int id, string name)
     {
         Id = id;
         Name = name;
@@ -14,61 +23,69 @@ public abstract class Product
     public abstract bool CanBeSold();
 }
 
-public enum FoodType
-{
-    Liquid,
-    Solid
-}
-
 public class FoodProduct : Product
 {
-    public bool IsLiquid { get; }
-    public DateTime DateOfManufacture { get; set; }
+    private FoodType Type { get;  }
+    private DateTime DateOfManufacture { get;  }
 
-    protected int LiquidUseByDays { get; set; } = 12;
-    protected int SolidUseByDays { get; set; } = 20;
-
-    public FoodProduct(int id, string name, bool isLiquid, DateTime dateOfManufacture) : base(id, name)
+    protected Dictionary<FoodType, int> UseByDays = new Dictionary<FoodType, int>
     {
-        IsLiquid = isLiquid;
+        { FoodType.Liquid, 12 },
+        { FoodType.Solid, 20 },
+        // { FoodType.Other, 15 }
+    };
+
+    public FoodProduct(int id, string name, FoodType type, DateTime dateOfManufacture) : base(id, name)
+    {
+        Type = type;
         DateOfManufacture = dateOfManufacture;
     }
 
     public override bool CanBeSold()
     {
-        int days = IsLiquid ? LiquidUseByDays : SolidUseByDays;
+        if (!UseByDays.ContainsKey(Type))
+            throw new Exception("Invalid food type");
+
+        int days = UseByDays[Type];
         return DateTime.Now <= DateOfManufacture.AddDays(days);
     }
 }
 
 public class PackagedFoodProduct : FoodProduct
 {
-    public PackagedFoodProduct(int id, string name, bool isLiquid, DateTime dateOfManufacture) : base(id, name, isLiquid, dateOfManufacture)
+    public PackagedFoodProduct(int id, string name, FoodType type, DateTime dateOfManufacture) : base(id, name, type, dateOfManufacture)
     {
-        LiquidUseByDays++;
-        SolidUseByDays++;
+        UseByDays[FoodType.Liquid]++;
+        UseByDays[FoodType.Solid]++;
+        // UseByDays[FoodType.Other]++;
     }
 }
-
 
 public class ElectronicsProduct : Product
 {
     private bool hasWarranty;
 
-    public ElectronicsProduct(int id, string name)
+    public ElectronicsProduct(int id, string name, bool hasWarranty)
         : base(id, name)
     {
     }
 
-    public bool HasWarranty
+    private bool HasWarranty
     {
         get;
-        private set;
+        set;
     }
 
-    public void AddWarranty(int id)
+    public void AddWarranty()
     {
-        hasWarranty = true;
+        HasWarranty = true;
+        if (HasWarranty) //pewnie redundant, ale dla testow zostawilem
+        {
+            Console.WriteLine("Warranty hass been added");
+            return;
+        }
+        Console.WriteLine("WARRANTY HAS NOT BEEN ADDED");
+        
     }
 
     public override bool CanBeSold()

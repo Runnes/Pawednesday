@@ -1,0 +1,15 @@
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\bin\Debug\net7.0\PAwednesday.exe
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\bin\Debug\net7.0\PAwednesday.deps.json
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\bin\Debug\net7.0\PAwednesday.runtimeconfig.json
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\bin\Debug\net7.0\PAwednesday.dll
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\bin\Debug\net7.0\PAwednesday.pdb
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\PAwednesday.csproj.AssemblyReference.cache
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\PAwednesday.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\PAwednesday.AssemblyInfoInputs.cache
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\PAwednesday.AssemblyInfo.cs
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\PAwednesday.csproj.CoreCompileInputs.cache
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\PAwednesday.dll
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\refint\PAwednesday.dll
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\PAwednesday.pdb
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\PAwednesday.genruntimeconfig.cache
+C:\Users\PGTB84\RiderProjects\PAwednesday\PAwednesday\obj\Debug\net7.0\ref\PAwednesday.dll
