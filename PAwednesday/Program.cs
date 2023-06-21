@@ -1,8 +1,10 @@
 ﻿using System;
+using PAwednesday;
+
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("xxxx");
+        // Product electro = new ElectronicsProduct()
     }
 }
